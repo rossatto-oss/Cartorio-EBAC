@@ -125,6 +125,7 @@ int main() //função  responsavel por cordenar todas as operações que o programa 
     	printf("\t1 - Registrar nomes\n");
     	printf("\t2 - consultar nomes\n");
     	printf("\t3 - deletar nomes\n\n");
+    	printf("\t4 - sair do sistema\n\n");
         printf("Opção:"); //Fim do menu
  
        scanf("%d", &opcao); //Armazenando a escolha do Usuario
@@ -144,6 +145,11 @@ int main() //função  responsavel por cordenar todas as operações que o programa 
     	  case 3:
        	  deletar(); //chamada de função
        	  break;//sai do loop apos executar esse bloco.
+          
+          case 4:
+          printf("obrigado por utilizar o nosso sistema!\n");
+		  return 0;
+		  break;	
           
        	  default: // codigo executado se nao corresponder a nenhuma das funções ou opções existentes.
           printf(" essa opção nao está disponivel!\n");
