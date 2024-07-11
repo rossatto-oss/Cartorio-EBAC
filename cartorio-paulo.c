@@ -110,55 +110,69 @@ int deletar() //funçao responsavel por deletar o usuario do sistema.
 
 int main() //função  responsavel por cordenar todas as operações que o programa realiza.
     {
-	int opcao=0; //Definindo variaveis
-	int laco=1; 
+    	int opcao=0; //Definindo variaveis
+	    int laco=1; 
+    	char senhadigitada[10]="a";
+    	int comparacao;
 	
+    	printf("### Cartorio da EBAC ###\n\n");
+    	printf("login de administrador !\n\nDigite sua senha: ");
+    	scanf("%s",senhadigitada);
+	
+    	comparacao = strcmp(senhadigitada, "admin"); //compara a variavel "senha digitada" que o usuario escreveu com a esperada.
+	
+    	if(comparacao == 0) //se ele acertar a senha o loop encerra e abre a pagina.   
+	  
+	     
+	 {
+	    system ("cls");
 		for(laco=1;laco=1;) //o programa sempre volta para o inicio. obs: nao tem fim.
-    {
+       {
 	   
-	   system("cls");//responsavel por limpar a tela
+	        system("cls");//responsavel por limpar a tela
 	
-    	setlocale(LC_ALL, "portuguese");//Definindo a linguagem
+        	setlocale(LC_ALL, "portuguese");//Definindo a linguagem
 	
-    	printf("### cartório da EBAC ###\n\n"); //Inicio do menu
-    	printf("escolha a opção desejada de menu:\n\n");
-    	printf("\t1 - Registrar nomes\n");
-    	printf("\t2 - consultar nomes\n");
-    	printf("\t3 - deletar nomes\n\n");
-    	printf("\t4 - sair do sistema\n\n");
-        printf("Opção:"); //Fim do menu
- 
-       scanf("%d", &opcao); //Armazenando a escolha do Usuario
-
-       system("cls"); //responsavel por limpar a tela 
+        	printf("### cartório da EBAC ###\n\n"); //Inicio do menu
+        	printf("escolha a opção desejada de menu:\n\n");
+        	printf("\t1 - Registrar nomes\n");
+        	printf("\t2 - consultar nomes\n");
+    	    printf("\t3 - deletar nomes\n\n");
+        	printf("\t4 - sair do sistema\n\n");
+            printf("Opção:"); //Fim do menu
+  
+            scanf("%d", &opcao); //Armazenando a escolha do Usuario
+  
+            system("cls"); //responsavel por limpar a tela 
        
-       switch(opcao) //inicio da seleção de menu
-      {
-      	   case 1:
-	      registro(); //chamada de função
-	      break; //sai do loop apos executar esse bloco.
+          switch(opcao) //inicio da seleção de menu
+          {
+      	     case 1:
+	         registro(); //chamada de função
+	         break; //sai do loop apos executar esse bloco.
 	      
-	      case 2:
-	      consultar(); //chamada de função
-    	  break;//sai do loop apos executar esse bloco.
+	         case 2:
+	         consultar(); //chamada de função
+    	     break;//sai do loop apos executar esse bloco.
     	  
-    	  case 3:
-       	  deletar(); //chamada de função
-       	  break;//sai do loop apos executar esse bloco.
+    	     case 3:
+       	     deletar(); //chamada de função
+       	     break;//sai do loop apos executar esse bloco.
           
-          case 4:
-          printf("obrigado por utilizar o nosso sistema!\n");
-		  return 0;
-		  break;	
+             case 4:
+             printf("obrigado por utilizar o nosso sistema!\n");
+		     return 0;
+		     break;	
           
-       	  default: // codigo executado se nao corresponder a nenhuma das funções ou opções existentes.
-          printf(" essa opção nao está disponivel!\n");
-          system("pause");
-          break;  //sai do loop apos executar esse bloco.
+       	     default: // codigo executado se nao corresponder a nenhuma das funções ou opções existentes.
+             printf(" essa opção nao está disponivel!\n");
+             system("pause");
+            } break;  //sai do loop apos executar esse bloco.
 	    }
    }
+else
+printf("senha incorreta!");
 }
-
 
 
 
